@@ -5,10 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATAJ - Veteran-Owned Financial Precision</title>
     <meta name="description" content="Veteran-Owned Financial Precision - Your journey to financial success starts here">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ATAJ - Veteran-Owned Financial Precision">
+    <meta property="og:description" content="Transform your financial dreams into reality with expert guidance from veteran-owned financial advisors">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atajfinancial.com">
+    <meta property="og:image" content="https://atajfinancial.com/IMG_0878.JPG">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ATAJ - Veteran-Owned Financial Precision">
+    <meta name="twitter:description" content="Transform your financial dreams into reality with expert guidance from veteran-owned financial advisors">
+    <meta name="twitter:image" content="https://atajfinancial.com/IMG_0878.JPG">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span>↑</span>
+    </button>
+
     <!-- Parallax Container -->
     <div class="parallax-container">
         <!-- Falling Money Background -->
@@ -31,6 +61,10 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -56,7 +90,7 @@
             <div class="hero-visual">
                 <div class="floating-card">
                     <div class="card-content">
-                        <h3>$1M+</h3>
+                        <h3>+ $250,000</h3>
                         <p>Success Stories</p>
                     </div>
                 </div>
@@ -99,33 +133,54 @@
                 </div>
                 <div class="services-grid">
                     <div class="service-card">
-                        <h3>Investment Planning</h3>
-                        <p>Custom investment strategies designed to build long-term wealth</p>
+                        <h3>Veteran Benefit Information</h3>
+                        <p>Expert guidance on maximizing your veteran benefits and entitlements</p>
                         <ul>
-                            <li>Portfolio Diversification</li>
-                            <li>Risk Assessment</li>
-                            <li>Market Analysis</li>
+                            <li>VA Benefits Navigation</li>
+                            <li>Disability Claims Assistance</li>
+                            <li>Benefits Optimization</li>
                         </ul>
                         <button class="btn btn-outline">Learn More</button>
                     </div>
                     <div class="service-card featured">
                         <div class="featured-badge">Most Popular</div>
-                        <h3>Financial Coaching</h3>
-                        <p>One-on-one guidance to accelerate your path to financial freedom</p>
+                        <h3>Tax Prep</h3>
+                        <p>Professional tax preparation services to maximize your returns</p>
+                        <div class="tax-countdown">
+                            <p class="countdown-label">Tax Season Starts In:</p>
+                            <div class="countdown-timer" id="taxCountdown">
+                                <div class="countdown-item">
+                                    <span class="countdown-value" id="days">00</span>
+                                    <span class="countdown-unit">Days</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-value" id="hours">00</span>
+                                    <span class="countdown-unit">Hours</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-value" id="minutes">00</span>
+                                    <span class="countdown-unit">Minutes</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-value" id="seconds">00</span>
+                                    <span class="countdown-unit">Seconds</span>
+                                </div>
+                            </div>
+                        </div>
                         <ul>
-                            <li>Personal Strategy Sessions</li>
-                            <li>Goal Setting & Tracking</li>
-                            <li>24/7 Support Access</li>
+                            <li>Individual Tax Returns</li>
+                            <li>Business Tax Filing</li>
+                            <li>Tax Planning & Strategy</li>
                         </ul>
                         <button class="btn btn-primary">Get Started</button>
                     </div>
                     <div class="service-card">
-                        <h3>Wealth Management</h3>
-                        <p>Comprehensive wealth preservation and growth strategies</p>
+                        <h3>Travel Planning</h3>
+                        <p>Comprehensive travel planning services for your perfect getaway</p>
                         <ul>
-                            <li>Asset Protection</li>
-                            <li>Tax Optimization</li>
-                            <li>Estate Planning</li>
+                            <li>Custom Itineraries</li>
+                            <li>Booking & Reservations</li>
+                            <li>Travel Consultation</li>
                         </ul>
                         <button class="btn btn-outline">Learn More</button>
                     </div>
@@ -152,6 +207,253 @@
                     <div class="stat-item">
                         <h3 class="stat-number" data-target="15">0</h3>
                         <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculator" class="calculator">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Financial Calculator</h2>
+                    <p>Estimate your potential returns with our investment calculator</p>
+                </div>
+                <div class="calculator-container">
+                    <div class="calculator-inputs">
+                        <div class="calc-group">
+                            <label for="initialInvestment">Initial Investment ($)</label>
+                            <input type="number" id="initialInvestment" value="10000" min="0">
+                        </div>
+                        <div class="calc-group">
+                            <label for="monthlyContribution">Monthly Contribution ($)</label>
+                            <input type="number" id="monthlyContribution" value="500" min="0">
+                        </div>
+                        <div class="calc-group">
+                            <label for="interestRate">Annual Interest Rate (%)</label>
+                            <input type="number" id="interestRate" value="8" min="0" max="100" step="0.1">
+                        </div>
+                        <div class="calc-group">
+                            <label for="years">Investment Period (years)</label>
+                            <input type="number" id="years" value="10" min="1" max="50">
+                        </div>
+                        <button class="btn btn-primary" id="calculateBtn">Calculate</button>
+                    </div>
+                    <div class="calculator-results">
+                        <div class="result-card">
+                            <h3>Final Balance</h3>
+                            <p class="result-value" id="finalBalance">$0</p>
+                        </div>
+                        <div class="result-card">
+                            <h3>Total Contributions</h3>
+                            <p class="result-value" id="totalContributions">$0</p>
+                        </div>
+                        <div class="result-card">
+                            <h3>Total Interest Earned</h3>
+                            <p class="result-value" id="totalInterest">$0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Client Success Stories</h2>
+                    <p>Hear from those who've transformed their financial future</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"ATAJ helped me grow my portfolio by 150% in just 2 years. Their veteran-led approach brings discipline and precision to financial planning."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JD</div>
+                            <div class="author-info">
+                                <h4>John Davis</h4>
+                                <p>Tech Executive</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Finally achieved financial freedom at 45. The personalized coaching and strategic planning made all the difference. Couldn't be happier!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <h4>Sarah Martinez</h4>
+                                <p>Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The team's military precision and dedication to excellence is unmatched. They turned my financial chaos into a well-organized success plan."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RJ</div>
+                            <div class="author-info">
+                                <h4>Robert Johnson</h4>
+                                <p>Retired Veteran</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Meet the Owner</h2>
+                    <p>Alanah</p>
+                </div>
+                <div class="team-content">
+                    <div class="team-video">
+                        <video controls autoplay muted loop>
+                            <source src="EliteProTax Service Photoshoot BTS (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-photo">
+                                <div class="team-avatar">AT</div>
+                            </div>
+                            <h3>Andrew Thompson</h3>
+                            <p class="team-role">Founder & CEO</p>
+                            <p class="team-bio">Former Army Captain with 15+ years in financial planning. Specialized in wealth building and investment strategies.</p>
+                            <div class="team-badges">
+                                <span class="badge">🎖️ Veteran</span>
+                                <span class="badge">📊 CFP</span>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-photo">
+                                <div class="team-avatar">AJ</div>
+                            </div>
+                            <h3>Amanda Jackson</h3>
+                            <p class="team-role">Chief Financial Strategist</p>
+                            <p class="team-bio">Navy Veteran and financial expert. Brings precision and dedication to every client relationship.</p>
+                            <div class="team-badges">
+                                <span class="badge">🎖️ Veteran</span>
+                                <span class="badge">💼 CFA</span>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-photo">
+                                <div class="team-avatar">TM</div>
+                            </div>
+                            <h3>Thomas Martinez</h3>
+                            <p class="team-role">Investment Advisor</p>
+                            <p class="team-bio">Marine Corps Veteran with expertise in portfolio management and risk assessment.</p>
+                            <div class="team-badges">
+                                <span class="badge">🎖️ Veteran</span>
+                                <span class="badge">📈 MBA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about our services</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What makes ATAJ different from other financial advisors?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>As a veteran-owned company, we bring military discipline, precision, and integrity to financial planning. Our team has real-world experience building wealth and understands the unique challenges our clients face.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How much do I need to get started?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We work with clients at all levels, from those just starting their financial journey to established investors. Our initial consultation is free, and we'll create a customized plan based on your current situation and goals.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is your typical return on investment?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Returns vary based on individual strategies, risk tolerance, and market conditions. Our clients have historically seen annual returns ranging from 8-15%, though past performance doesn't guarantee future results. We focus on sustainable, long-term growth.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you offer services for veterans specifically?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We have specialized programs for veterans and their families, including assistance with VA benefits optimization, transition planning, and veteran-specific investment opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How often will we meet to review my portfolio?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We recommend quarterly reviews for most clients, with additional check-ins as needed. You'll also have 24/7 access to your portfolio dashboard and can schedule consultations anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Stay Updated</h2>
+                        <p>Get financial tips, market insights, and exclusive offers delivered to your inbox</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges Section -->
+        <section class="trust-badges">
+            <div class="container">
+                <div class="badges-grid">
+                    <div class="badge-item">
+                        <div class="badge-icon">🔒</div>
+                        <h4>Bank-Level Security</h4>
+                        <p>256-bit SSL Encryption</p>
+                    </div>
+                    <div class="badge-item">
+                        <div class="badge-icon">✓</div>
+                        <h4>Licensed & Certified</h4>
+                        <p>SEC Registered Advisors</p>
+                    </div>
+                    <div class="badge-item">
+                        <div class="badge-icon">🎖️</div>
+                        <h4>Veteran Owned</h4>
+                        <p>Military Precision</p>
+                    </div>
+                    <div class="badge-item">
+                        <div class="badge-icon">⭐</div>
+                        <h4>5-Star Rated</h4>
+                        <p>1000+ Reviews</p>
                     </div>
                 </div>
             </div>
